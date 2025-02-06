@@ -87,15 +87,15 @@ namespace Project8FoodMartProjectWithMongoDB.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SendMail(string name, string email, string message)
+        public async Task<IActionResult> SendMail(string name, string email, string message, string discountrate)
         {
             var smtpSettings = _configuration.GetSection("SmtpSettings");
 
             var emailMessage = new MimeMessage();
             emailMessage.From.Add(new MailboxAddress("FoodMart", smtpSettings["SenderEmail"]));
             emailMessage.To.Add(new MailboxAddress(name, email));
-            emailMessage.Subject = "FoodMart İndirim Kodunuz";
-            emailMessage.Body = new TextPart("plain") { Text = $"Merhaba {name},\n\n{message}" };
+            emailMessage.Subject = "FoodMart Özel İndirim Kuponunuz Hazır! 🎁";
+            emailMessage.Body = new TextPart("plain") { Text = $"Merhaba {name},\n\n{message}\n\nİndirim Kuponu: {discountrate}\n\nBu kuponu kullanarak FoodMart'taki tüm ürünlerde geçerli %20 indirimden yararlanabilirsiniz. Hemen alışverişe başlamak için buraya tıklayın.\n\nEğer herhangi bir sorunuz varsa veya yardıma ihtiyacınız olursa, bize iletişim adreslerimiz üzerinden ulaşabilirsiniz.\n\nKeyifli alışverişler dileriz!\n\nSevgiler,\nFoodMart Ekibi" };
 
             using (var client = new SmtpClient())
             {

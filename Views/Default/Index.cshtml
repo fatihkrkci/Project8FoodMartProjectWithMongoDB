@@ -10,14 +10,14 @@
 @await Component.InvokeAsync("_DefaultProductDiscountSection")
 @await Component.InvokeAsync("_DefaultMostSellerProductsSection")
 
-<section class="py-5">
+<section id="sendmail" class="py-5">
     <div class="container-fluid">
         <div class="bg-secondary py-5 my-5 rounded-5" style="background: url('images/bg-leaves-img-pattern.png') no-repeat;">
             <div class="container my-5">
                 <div class="row">
                     <div class="col-md-6 p-5">
                         <div class="section-header">
-                            <h2 class="section-title display-4"><span class="text-primary">Müşterilerinize Özel</span>indirim kodları oluşturun</h2>
+                            <h2 class="section-title display-4"><span class="text-primary">Müşterilerinize Özel</span><br />indirim kodları oluşturun</h2>
                         </div>
                         <p>İstediğiniz müşterilere özel indirim kodları oluşturarak e-posta adresi aracılığıyla kendilerine iletebilirsiniz.</p>
                     </div>
@@ -30,6 +30,10 @@
                             <div class="mb-3">
                                 <label for="email" class="form-label">E-Posta Adresi</label>
                                 <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="musteri@gmail.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="discountrate" class="form-label">Kupon Kodu</label>
+                                <input type="text" class="form-control form-control-lg" name="discountrate" id="discountrate" placeholder="%20" required>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">Mesaj</label>
@@ -46,7 +50,7 @@
     </div>
 </section>
 
-<section class="py-5 my-5">
+<section id="mobileapp" class="py-5 my-5">
     <div class="container-fluid">
 
         <div class="bg-warning py-5 rounded-5" style="background-image: url('images/bg-pattern-2.png') no-repeat;">
