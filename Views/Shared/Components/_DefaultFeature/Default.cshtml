@@ -1,0 +1,36 @@
+﻿@model List<ResultFeatureDto>
+
+<section class="py-3" style="background-image: url('images/background-pattern.jpg');background-repeat: no-repeat;background-size: cover;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner-blocks">
+                    <div class="banner-ad large bg-info block-1">
+                        <div class="swiper main-swiper">
+                            <div class="swiper-wrapper">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="swiper-slide">
+                                        <div class="row banner-content p-5">
+                                            <div class="content-wrapper col-md-7">
+                                                <div class="categories my-3">100% Doğal</div>
+                                                <h3 class="display-4">@item.Title</h3>
+                                                <p>@item.Description</p>
+                                                <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">Satın Al</a>
+                                            </div>
+                                            <div class="img-wrapper col-md-5">
+                                                <img src="@item.FeatureImageURL" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    @await Component.InvokeAsync("_DefaultCategoryDiscountSection")
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+﻿@model List<ResultCategoryDto>
+
+<section class="py-5 overflow-hidden">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="section-header d-flex flex-wrap justify-content-between mb-5">
+                    <h2 class="section-title">Kategoriler</h2>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="category-carousel swiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model)
+                        {
+                            <a href="@item.CategoryURL" class="nav-link category-item swiper-slide">
+                                <img src="@item.CategoryIconURL" alt="@item.CategoryName" style="width: 35px; height: 35px;">
+                                <h3 class="category-title">@item.CategoryName</h3>
+                            </a>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

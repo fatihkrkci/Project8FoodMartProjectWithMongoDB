@@ -1,0 +1,36 @@
+﻿@model List<ResultDiscountWithProductOrCategoryDto>
+
+<section class="py-5">
+    <div class="container-fluid">
+        <div class="row">
+
+            @if (Model.Any())
+            {
+                <!-- İlk Banner -->
+                <div class="col-md-6">
+                    <div class="banner-ad bg-danger mb-3" style="background: url('@Model[0].ProductImageURL'); background-repeat: no-repeat; background-position: right bottom;">
+                        <div class="banner-content p-5">
+                            <div class="categories text-primary fs-3 fw-bold">%@Model[0].DiscountRate İndirim</div>
+                            <h3 class="banner-title">@Model[0].ProductName</h3>
+                            <p>@Model[0].ProductName ürününde büyük indirim fırsatı!</p>
+                            <a href="#" class="btn btn-dark text-uppercase">Ürünleri Gör</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- İkinci Banner -->
+                <div class="col-md-6">
+                    <div class="banner-ad bg-info" style="background: url('@Model[1].ProductImageURL'); background-repeat: no-repeat; background-position: right bottom;">
+                        <div class="banner-content p-5">
+                            <div class="categories text-primary fs-3 fw-bold">%@Model[1].DiscountRate İndirim</div>
+                            <h3 class="banner-title">@Model[1].ProductName</h3>
+                            <p>@Model[1].ProductName ürününde büyük indirim fırsatı!</p>
+                            <a href="#" class="btn btn-dark text-uppercase">Ürünleri Gör</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>

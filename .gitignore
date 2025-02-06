@@ -1,0 +1,7 @@
+﻿# appsettings dosyalarını ignore et
+appsettings.json
+appsettings.Development.json
+
+# Visual Studio dosyalarını git takibinden çıkar
+.vs/
+

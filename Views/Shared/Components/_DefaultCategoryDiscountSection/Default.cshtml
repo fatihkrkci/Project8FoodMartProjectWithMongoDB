@@ -1,0 +1,32 @@
+﻿@model List<ResultDiscountWithProductOrCategoryDto>
+
+@if (Model.Any())
+{
+    <!-- İlk Banner -->
+    <div class="banner-ad bg-success-subtle block-2" style="background: url('@Model[0].CategoryImageURL') no-repeat; background-position: right bottom;">
+        <div class="row banner-content p-5">
+            <div class="content-wrapper col-md-7">
+                <div class="categories sale mb-3 pb-3">%@Model[0].DiscountRate İndirim</div>
+                <h3 class="banner-title">@Model[0].CategoryName</h3>
+                <a href="#" class="d-flex align-items-center nav-link">
+                    Ürünleri Gör
+                    <svg width="24" height="24"><use xlink:href="#arrow-right"></use></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- İkinci Banner -->
+    <div class="banner-ad bg-danger block-3" style="background: url('@Model[1].CategoryImageURL') no-repeat; background-position: right bottom;">
+        <div class="row banner-content p-5">
+            <div class="content-wrapper col-md-7">
+                <div class="categories sale mb-3 pb-3">%@Model[1].DiscountRate İndirim</div>
+                <h3 class="item-title">@Model[1].CategoryName</h3>
+                <a href="#" class="d-flex align-items-center nav-link">
+                    Ürünleri Gör
+                    <svg width="24" height="24"><use xlink:href="#arrow-right"></use></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+}

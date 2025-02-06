@@ -1,0 +1,87 @@
+﻿@model List<ResultFeatureDto>
+
+@{
+    ViewData["Title"] = "FeatureList";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/mazer-1.0.0/dist/assets/vendors/simple-datatables/style.css">
+
+<header class="mb-3">
+    <a href="#" class="burger-btn d-block d-xl-none">
+        <i class="bi bi-justify fs-3"></i>
+    </a>
+</header>
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Öne Çıkarılan Alanlar İşlemleri</h3>
+                <p class="text-subtitle text-muted">Bu sayfada öne çıkarılan alanları listeleyebilir, dilerseniz ekleme, silme veya güncelleme işlemlerini gerçekleştirebilirsiniz.</p>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Admin Paneli</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Öne Çıkarılan Alanlar İşlemleri</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <a href="/Admin/Feature/CreateFeature" class="btn btn-primary">Yeni Öne Çıkarılan Alan Ekle</a>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped" id="table1">
+                    <thead>
+                        <tr>
+                            <th>Öne Çıkarılan Alan Başlığı</th>
+                            <th>Öne Çıkarılan Alan Açıklaması</th>
+                            <th>Öne Çıkarılan Alan Görseli</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Title</td>
+                                <td>@item.Description</td>
+                                <td>
+                                    <img src="~/@item.FeatureImageURL" style="height:100px; width:100px; object-fit:cover;" />
+                                </td>
+                                <td>
+                                    <a href="/Admin/Feature/UpdateFeature/@item.FeatureId" class="btn btn-warning" title="Öne Çıkarılan Alanı Güncelle">
+                                        <i class="bi bi-pencil-fill"></i>
+                                    </a>
+                                    <a href="/Admin/Feature/DeleteFeature/@item.FeatureId" class="btn btn-danger" title="Öne Çıkarılan Alanı Sil">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="~/mazer-1.0.0/dist/assets/vendors/simple-datatables/simple-datatables.js"></script>
+<script>
+    let table1 = document.querySelector('#table1');
+    let dataTable = new simpleDatatables.DataTable(table1, {
+        searchable: true,
+        fixedHeight: true,
+        perPage: 5,
+        labels: {
+            placeholder: "Ara...",
+            noRows: "Gösterilecek kayıt bulunamadı",
+            info: "Toplam {rows} kayıttan {start} ve {end} arasındakiler gözüküyor"
+        }
+    });
+</script>
