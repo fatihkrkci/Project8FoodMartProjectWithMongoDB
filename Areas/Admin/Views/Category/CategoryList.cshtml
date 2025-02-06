@@ -42,7 +42,6 @@
                             <th>Kategori Adı</th>
                             <th>Kategori İkonu</th>
                             <th>Kategori Görseli</th>
-                            <th>Kategori Linki</th>
                             <th>İşlemler</th>
                         </tr>
                     </thead>
@@ -55,9 +54,15 @@
                                     <img src="~/@item.CategoryIconURL" style="height:25px; width:auto;" />
                                 </td>
                                 <td>
-                                    <img src="~/@item.CategoryImageURL" style="height:100px; width:100px; object-fit:cover;" />
+                                    @if (item.CategoryImageURL == "default")
+                                    {
+                                        <span>Görsel Yok</span>
+                                    }
+                                    else
+                                    {
+                                        <img src="~/@item.CategoryImageURL" style="height:100px; width:100px; object-fit:cover;" />
+                                    }
                                 </td>
-                                <td>@item.CategoryURL</td>
                                 <td>
                                     <a href="/Admin/Category/UpdateCategory/@item.CategoryId" class="btn btn-warning" title="Kategoriyi Güncelle">
                                         <i class="bi bi-pencil-fill"></i>

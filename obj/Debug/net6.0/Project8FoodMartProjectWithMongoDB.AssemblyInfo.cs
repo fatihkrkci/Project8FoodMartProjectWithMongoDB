@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Project8FoodMartProjectWithMongoDB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7030b2221c8a83c0ac4272f759b25f59f83f44dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2eb77e6dfef893ac25cb5dee1458b286dcbeaf0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Project8FoodMartProjectWithMongoDB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Project8FoodMartProjectWithMongoDB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
