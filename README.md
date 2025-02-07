@@ -46,7 +46,7 @@
 📦 DTO ve ViewBag ve ViewComponents kullanıldı.
 
 
-## 🖼️ Proje Görselleri ve Video
+## 🖼️ Proje Görselleri
 
 ![default](https://github.com/user-attachments/assets/c0a24f56-e0b0-4c19-8a30-1c3ed8de4f5e)
 
